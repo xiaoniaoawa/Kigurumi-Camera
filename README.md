@@ -10,11 +10,7 @@ Make a Kigurumi Camera to record ur life with a RaspberryPi <br>
 并且运行 <br>
 'sudo raspi-config' <br>
 确认其中的 Legacy Camera 为关闭状态 <br>
- <br>
-格式化一个USB驱动器并命名为kigcam，插入设备，并通电。 <br>
-在Raspberry Pi OS 中，将会自动挂载到 '/media/kigcam/kigcam' 下，当然此路径可以通过修改kigcam.py来设定 <br>
- <br>
- <br>
+<br>
 #Install | 安装 <br>
 下载 kigcam.py 到 /usr/bin/kigcam.py <br>
 按需求可适当修改kigcam.py <br>
@@ -26,7 +22,7 @@ Make a Kigurumi Camera to record ur life with a RaspberryPi <br>
 恭喜你制作成功了自己的行娃记录仪 <br>
  <br>
 #Use | 使用 <br>
-在设备正常开机的情况下，按下按钮，LED灯亮起，开始录制，再次按下，录制结束，文件可在 kigcam.py 中配置的路径下找到。 <br>
+在设备正常开机的情况下，按下按钮，LED灯亮起，开始录制，再次按下，录制结束，文件可在 kigcam.py 中配置的路径下找到，默认为/home/kigcam/Videos。 <br>
 
 
 本程序采用GNU GPLv3开源协议，请遵循该协议。

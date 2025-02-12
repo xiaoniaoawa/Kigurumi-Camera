@@ -22,7 +22,7 @@ Make a Kigurumi Camera to record ur life with a RaspberryPi <br>
 恭喜你制作成功了自己的行娃记录仪 <br>
  <br>
 #Use | 使用 <br>
-在设备正常开机的情况下，按下按钮，LED灯亮起，开始录制，再次按下，录制结束，文件可在 kigcam.py 中配置的路径下找到，默认为/home/kigcam/Videos。 <br>
+在设备正常开机的情况下，按下按钮，LED灯亮起，开始录制，再次按下，录制结束，文件可在 kigcam.py 中配置的路径下找到，默认为/media/kigcam/kigcam 。 <br>
 
 
 本程序采用GNU GPLv3开源协议，请遵循该协议。

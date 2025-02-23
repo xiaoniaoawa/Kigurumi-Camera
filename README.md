@@ -24,16 +24,20 @@ sudo raspi-config
 按需求可适当修改`kigcam.py` 
  
 下载 kigcamera.service 到 `/etc/systemd/system/kigcamera.service` 
- 
+
 运行
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable kigcamera.service
 sudo systemctl start kigcamera.service
 ```
+
+然后插入u盘，重新启动树莓派
+
 恭喜你制作成功了自己的行娃记录仪 
  
 ### Use | 使用
+开机前，请先插入名为 `kigcam` 的USB存储设备
 在设备正常开机的情况下，按下按钮，LED灯亮起，开始录制，再次按下，录制结束，文件可在 `kigcam.py` 中配置的路径下找到，默认为`/media/kigcam/kigcam` 。 
  
  

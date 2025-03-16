@@ -1,16 +1,28 @@
+from picamera2.encoders import H264Encoder
+# 可编辑设置_按钮
+BUTTON_PIN = 17    # 按钮GPIO编号（BCM模式）
+LED_PIN = 27       # LED GPIO编号（BCM模式）
+
+# 可编辑设置_保存
+SAVE_PATH = "/mnt/kigcam" #保存路径 
+VSIZE_W = 800 #视频宽度
+VSIZE_H = 600 #视频高度
+
+# 可编辑设置_高级
+CHECK_INTERVAL = 5 #路径存在检测冷却(sec)
+VIDENCODER = H264Encoder(10000000) #编码器
+
+
+
+
+
+#引用模块
 import RPi.GPIO as GPIO
 from picamera2 import Picamera2
 import datetime
 import os
 import time
-from picamera2.encoders import H264Encoder
-
-# 硬件设置
-BUTTON_PIN = 17    # 按钮GPIO编号（BCM模式）
-LED_PIN = 27       # LED GPIO编号（BCM模式）
-SAVE_PATH = "/mnt/kigcam" #保存路径
-CHECK_INTERVAL = 5  # 路径检测间隔（秒）
-VIDENCODER = H264Encoder(10000000) #编码器
+#from picamera2.encoders import H264Encoder
 
 #清屏
 os.system('clear')
@@ -24,7 +36,7 @@ GPIO.setup(LED_PIN, GPIO.OUT)
 camera = Picamera2()
 print(camera.sensor_modes)
 video_rec_config = camera.create_video_configuration(
-    main={"size": (800, 800)}
+    main={"size": (VSIZE_W, VSIZE_H)}
 )
 camera.configure(video_rec_config)
 #在这里修改录制分辨率
@@ -66,12 +78,23 @@ def button_callback(channel):
             file_path = os.path.join(SAVE_PATH, filename)
             print('recording with '+file_path)
             camera.start_recording(output=file_path, encoder=VIDENCODER)
+            for templed in range(4):
+                GPIO.output(LED_PIN, GPIO.HIGH)
+                time.sleep(0.1)
+                GPIO.output(LED_PIN, GPIO.LOW)
+                time.sleep(0.1)
             GPIO.output(LED_PIN, GPIO.HIGH)
             is_recording = True
             print(f"开始录制: {file_path}")
         else:
             camera.stop_recording()
             GPIO.output(LED_PIN, GPIO.LOW)
+            
+            for templed in range(4):
+                GPIO.output(LED_PIN, GPIO.HIGH)
+                time.sleep(0.1)
+                GPIO.output(LED_PIN, GPIO.LOW)
+                time.sleep(0.1)
             is_recording = False
             print("录制已停止")
 

@@ -9,6 +9,7 @@ Make a Kigurumi Camera to record ur life with a RaspberryPi
 ```bash
 sudo su -c "wget -qO- https://codpi.icu/kigcam/one-cmd-arm64-pi.sh | bash"
 ```
+ 
 ### 手动配置
 ### Before Start | 开始之前 
 确保您插入了兼容的CSI摄像头，并在RaspberryPi上安装了Raspberry Pi OS，主用户为`kigcam`，本程序兼容 Debian 11 和 Raspberry Pi OS Lite 镜像，最好为64位 
@@ -25,7 +26,6 @@ sudo raspi-config
 ```
 确认其中的 `Legacy Camera` 为关闭状态 
  
-### Install | 安装
 下载 `kigcam.py` 到 `/usr/bin/kigcam.py` （可使用wget）
  
 按需求可适当修改`kigcam.py` 

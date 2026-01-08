@@ -7,7 +7,7 @@ Make a Kigurumi Camera to record ur life with a RaspberryPi
 ### 自动配置
 运行 
 ```bash
-sudo su -c "wget -qO- https://codpi.icu/kigcam/one-cmd-arm64-pi.sh | bash"
+sudo su -c "wget -qO- https://codpi.cn/kigcam/one-cmd-arm64-pi.sh | bash"
 ```
  
 ### 手动配置
